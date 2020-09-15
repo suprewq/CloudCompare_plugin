@@ -1,0 +1,1 @@
+# CloudCompare_plugin
