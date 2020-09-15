@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/CC/plugin/ExamplePlugin">
+        <file>images/icon.png</file>
+        <file>info.json</file>
+        <file>images/smallCancel.png</file>
+        <file>images/smallValidate.png</file>
+        <file>images/smallReset.png</file>
+        <file>images/snowman.png</file>
+        <file>images/ccSave.png</file>
+    </qresource>
+</RCC>

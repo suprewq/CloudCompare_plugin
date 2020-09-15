@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>256</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>581</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="showDropIndicator" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::NoSelection</enum>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="columnCount">
+    <number>5</number>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>115</number>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>30</number>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>18</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Index</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">X</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">Y</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">Z</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>plane  size</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>581</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_marker_2">
+      <property name="text">
+       <string>curvature_threshold</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="curvatureBox">
+      <property name="minimum">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>0.300000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_marker_3">
+      <property name="text">
+       <string>normal_thrashold</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="normalBox">
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>20.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_marker_4">
+      <property name="text">
+       <string>nebor_size</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="neborBox">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99</number>
+      </property>
+      <property name="value">
+       <number>10</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>10</y>
+     <width>581</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QToolButton" name="revertToolButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="statusTip">
+       <string>Remove last entry</string>
+      </property>
+      <property name="whatsThis">
+       <string>Remove last entry</string>
+      </property>
+      <property name="text">
+       <string>remove last</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../ExamplePlugin.qrc">
+        <normaloff>:/CC/plugin/ExamplePlugin/images/smallReset.png</normaloff>:/CC/plugin/ExamplePlugin/images/smallReset.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QToolButton" name="validToolButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="statusTip">
+       <string>確定所有點</string>
+      </property>
+      <property name="whatsThis">
+       <string>Convert list to new cloud (and close dialog)</string>
+      </property>
+      <property name="text">
+       <string>to cloud</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../ExamplePlugin.qrc">
+        <normaloff>:/CC/plugin/ExamplePlugin/images/smallValidate.png</normaloff>:/CC/plugin/ExamplePlugin/images/smallValidate.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QToolButton" name="cancelToolButton">
+      <property name="toolTip">
+       <string>Close dialog (list will be lost)</string>
+      </property>
+      <property name="statusTip">
+       <string>Close dialog (list will be lost)</string>
+      </property>
+      <property name="text">
+       <string>stop</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../../qCC/icons.qrc">
+        <normaloff>:/CC/images/smallCancel.png</normaloff>:/CC/images/smallCancel.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QToolButton" name="saveToolButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="toolTip">
+       <string>Close dialog (list will be lost)</string>
+      </property>
+      <property name="statusTip">
+       <string>保存所有平面</string>
+      </property>
+      <property name="text">
+       <string>save</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../ExamplePlugin.qrc">
+        <normaloff>:/CC/plugin/ExamplePlugin/images/ccSave.png</normaloff>:/CC/plugin/ExamplePlugin/images/ccSave.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>108</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_marker">
+      <property name="text">
+       <string>marker size</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="markerSizeBox">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99</number>
+      </property>
+      <property name="value">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>count</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="countLineEdit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+      <property name="maxLength">
+       <number>255</number>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../ExamplePlugin.qrc"/>
+  <include location="../../../../qCC/icons.qrc"/>
+  <include location="../../../../qCC/icons.qrc"/>
+  <include location="../../../../qCC/icons.qrc"/>
+  <include location="../../../../qCC/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
